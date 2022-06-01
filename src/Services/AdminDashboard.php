@@ -1,6 +1,6 @@
 <?php
 
-namespace HauntPet\Framework\Services;
+namespace HauntPet\Dashboard\Services;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;

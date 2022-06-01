@@ -1,10 +1,10 @@
 <?php
 
-namespace HauntPet\Framework;
+namespace HauntPet\Dashboard;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use HauntPet\Framework\Services\AdminDashboard;
+use HauntPet\Dashboard\Services\AdminDashboard;
 
 class FrameworkServiceProvider extends ServiceProvider
 {

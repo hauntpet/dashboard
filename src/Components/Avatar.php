@@ -1,8 +1,8 @@
 <?php
 
-namespace HauntPet\Framework\Components;
+namespace HauntPet\Dashboard\Components;
 
-use HauntPet\Framework\Components\Image;
+use HauntPet\Dashboard\Components\Image;
 
 class Avatar extends Image
 {

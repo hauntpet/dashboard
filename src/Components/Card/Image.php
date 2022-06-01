@@ -1,9 +1,9 @@
 <?php
 
-namespace HauntPet\Framework\Components\Card;
+namespace HauntPet\Dashboard\Components\Card;
 
 use Illuminate\View\Component;
-use HauntPet\Framework\Concerns\Src;
+use HauntPet\Dashboard\Concerns\Src;
 
 class Image extends Component
 {

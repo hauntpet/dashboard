@@ -1,10 +1,10 @@
 <?php
 
-namespace HauntPet\Framework\Components\Button;
+namespace HauntPet\Dashboard\Components\Button;
 
 use Illuminate\View\Component;
-use HauntPet\Framework\Concerns\Href;
-use HauntPet\Framework\Concerns\Active;
+use HauntPet\Dashboard\Concerns\Href;
+use HauntPet\Dashboard\Concerns\Active;
 
 class Nav extends Component
 {

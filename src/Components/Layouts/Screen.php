@@ -1,6 +1,6 @@
 <?php
 
-namespace HauntPet\Framework\Components\Layouts;
+namespace HauntPet\Dashboard\Components\Layouts;
 
 use Illuminate\View\Component;
 

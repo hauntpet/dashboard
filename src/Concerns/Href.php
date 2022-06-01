@@ -1,6 +1,6 @@
 <?php
 
-namespace HauntPet\Framework\Concerns;
+namespace HauntPet\Dashboard\Concerns;
 
 trait Href
 {

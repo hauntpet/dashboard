@@ -1,6 +1,6 @@
 <?php
 
-namespace HauntPet\Framework\Facades;
+namespace HauntPet\Dashboard\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
