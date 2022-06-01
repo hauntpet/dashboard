@@ -10,6 +10,8 @@ composer require hauntpet/dashboard
 ```
 
 ### Usage
+The `auth()->user()` model requires the fields **username, and profile_image**. The route `/logout` is also required.
+
 Create a custom Admin Dashboard class that extends the base class. Within this class you can build the navigation.
 ```php
 namespace App\Services;
