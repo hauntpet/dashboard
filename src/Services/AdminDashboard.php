@@ -61,7 +61,7 @@ class AdminDashboard
      */
     public function isActive(array $item): bool
     {
-        if (!array_key_exists('active', $item)) {
+        if (!array_key_exists('route', $item)) {
             return false;
         }
 
