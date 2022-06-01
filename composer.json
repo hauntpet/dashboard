@@ -1,6 +1,6 @@
 {
-    "name": "hauntpet/framework",
-    "description": "The shared framework between the main app and a game.",
+    "name": "hauntpet/dashboard",
+    "description": "The shared dashboard between the main app and a game.",
     "type": "library",
     "license": "proprietary",
     "authors": [

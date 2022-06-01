@@ -1,4 +1,4 @@
-# hauntpet/framework
+# hauntpet/dashboard
 
 The shared framework between the main app and a game.
 
@@ -6,7 +6,7 @@ The shared framework between the main app and a game.
 
 ### Installation
 ```bash
-composer require hauntpet/framework
+composer require hauntpet/dashboard
 ```
 
 ### Usage
