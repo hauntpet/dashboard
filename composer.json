@@ -17,16 +17,16 @@
     "autoload": {
         "psr-4": {
             "HauntPet\\Dashboard\\": "src/"
-        },
-        "aliases": {
-            "AdminDashboard": "HauntPet\\Dashboard\\Facades\\AdminDashboard"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "HauntPet\\Dashboard\\FrameworkServiceProvider"
+                "HauntPet\\Dashboard\\DashboardServiceProvider"
             ]
+        },
+        "aliases": {
+            "AdminDashboard": "HauntPet\\Dashboard\\Facades\\AdminDashboard"
         }
     }
 }

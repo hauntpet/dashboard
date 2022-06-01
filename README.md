@@ -1,6 +1,6 @@
 # hauntpet/dashboard
 
-The shared framework between the main app and a game.
+The shared dashboard between the main app and a game.
 
 ## Documentation
 

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use HauntPet\Dashboard\Services\AdminDashboard;
 
-class FrameworkServiceProvider extends ServiceProvider
+class DashboardServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -17,7 +17,7 @@ class FrameworkServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'haunt-framework');
 
-        Blade::componentNamespace('HauntPet\\Framework\\Components', 'haunt');
+        Blade::componentNamespace('HauntPet\\Dashboard\\Components', 'haunt');
 
         Blade::directive('includeComponent', function (string $expression) {
             [$view, $data] = explode(',', $expression) + ['', '[]'];
