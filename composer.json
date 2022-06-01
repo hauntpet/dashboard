@@ -23,10 +23,10 @@
         "laravel": {
             "providers": [
                 "HauntPet\\Dashboard\\DashboardServiceProvider"
-            ]
-        },
-        "aliases": {
-            "AdminDashboard": "HauntPet\\Dashboard\\Facades\\AdminDashboard"
+            ],
+            "aliases": {
+                "AdminDashboard": "HauntPet\\Dashboard\\Facades\\AdminDashboard"
+            }
         }
     }
 }
