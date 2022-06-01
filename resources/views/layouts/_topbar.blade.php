@@ -5,7 +5,10 @@
         @endforeach
     </div>
     <div class="flex items-center space-x-2">
-        <x-haunt::avatar class="h-8 w-8" :src="'https://eu.ui-avatars.com/api/?name='.auth()->user()->username" />
-        <div>{{ auth()->user()->username }}</div>
+        <x-haunt::avatar class="h-9 w-9" :src="auth()->user()->profile_image ?: 'https://eu.ui-avatars.com/api/?name='.auth()->user()->username" />
+        <div class="leading-3 text-right">
+            <div>{{ auth()->user()->username }}</div>
+            <a class="block text-blue-500 text-xs" href="logout">logout?</a>
+        </div>
     </div>
 </x-haunt::card>
