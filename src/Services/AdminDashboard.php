@@ -65,11 +65,11 @@ class AdminDashboard
             return false;
         }
 
-        return $this->isCurrentRoute($item['route']) || collect($item['active'])->filter(function ($child) {
+        return $this->isCurrentRoute($item['route']) || (array_key_exists('active', $item) ? collect($item['active'])->filter(function ($child) {
             return $this->isCurrentRoute($child);
-        })->first() !== null || collect($item['children'])->filter(function ($child) {
+        })->first() !== null : false) || (array_key_exists('children', $item) ? collect($item['children'])->filter(function ($child) {
             return array_key_exists('route', $child) ? $this->isCurrentRoute($child['route']) : false;
-        })->first() !== null;
+        })->first() !== null : false);
     }
 
     /**
