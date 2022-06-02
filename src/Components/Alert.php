@@ -3,29 +3,25 @@
 namespace HauntPet\Dashboard\Components;
 
 use Illuminate\View\Component;
-use HauntPet\Dashboard\Concerns\Level;
+use HauntPet\Dashboard\Concerns\Theme;
 use HauntPet\Dashboard\Concerns\Margin;
-use HauntPet\Dashboard\Concerns\Content;
 
-class Heading extends Component
+class Alert extends Component
 {
-    use Content,
-        Level,
-        Margin;
+    use Margin,
+        Theme;
 
     /**
      * Create a new component instance.
      *
-     * @param string|null $content
-     * @param int $level
+     * @param string $theme
      * @param bool $margin
      * @return void
      */
-    public function __construct(string $content = null, int $level = 3, bool $margin = true)
+    public function __construct(string $theme = 'error', bool $margin = true)
     {
-        $this->content = $content;
-        $this->level = $level;
         $this->margin = $margin;
+        $this->theme = $theme;
     }
 
     /**
@@ -35,6 +31,6 @@ class Heading extends Component
      */
     public function render()
     {
-        return view('haunt-framework::utilities.heading');
+        return view('haunt-framework::utilities.alert');
     }
 }

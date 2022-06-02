@@ -9,6 +9,6 @@
             <div>{{ auth()->user()->username }}</div>
             <a class="block text-blue-500 text-xs" href="logout">logout?</a>
         </div>
-        <x-haunt::avatar class="h-9 w-9" :src="auth()->user()->profile_image ?: 'https://eu.ui-avatars.com/api/?name='.auth()->user()->username" />
+        <x-haunt::avatar class="h-9 w-9" :src="auth()->user()->profile_image" />
     </div>
 </x-haunt::card>

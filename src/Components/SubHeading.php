@@ -7,11 +7,12 @@ use HauntPet\Dashboard\Concerns\Level;
 use HauntPet\Dashboard\Concerns\Margin;
 use HauntPet\Dashboard\Concerns\Content;
 
-class Heading extends Component
+class SubHeading extends Component
 {
     use Content,
         Level,
         Margin;
+
 
     /**
      * Create a new component instance.
@@ -35,6 +36,6 @@ class Heading extends Component
      */
     public function render()
     {
-        return view('haunt-framework::utilities.heading');
+        return view('haunt-framework::utilities.sub-heading');
     }
 }

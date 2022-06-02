@@ -1,9 +1,11 @@
-<x-haunt::layouts.screen class="md:flex p-6 md:space-x-6">
+<x-haunt::layouts.screen class="p-6 md:relative">
 
     @includeComponent('haunt-framework::layouts._nav')
 
-    <div class="flex-grow">
+    <div class="md:ml-16 md:pl-6">
         @includeComponent('haunt-framework::layouts._topbar')
+
+        <x-haunt::errors only="other" />
 
         {{ $slot }}
     </div>
