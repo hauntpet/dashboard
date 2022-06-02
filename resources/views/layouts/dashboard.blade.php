@@ -1,4 +1,4 @@
-<x-haunt::layouts.screen class="md:flex p-3 md:space-x-3">
+<x-haunt::layouts.screen class="md:flex p-6 md:space-x-6">
 
     @includeComponent('haunt-framework::layouts._nav')
 

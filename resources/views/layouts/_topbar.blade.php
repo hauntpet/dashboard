@@ -1,4 +1,4 @@
-<x-haunt::card class="flex items-center mb-3 px-6 py-3 rounded-t-none md:rounded-t-lg">
+<x-haunt::card class="flex items-center mb-6 px-6 py-3 rounded-t-none md:rounded-t-lg">
     <div class="flex flex-grow font-bold space-x-3 text-gray-400 text-sm uppercase">
         @foreach(AdminDashboard::getActive()['children'] ?? [] as $child)
             <a class="hover:text-blue-500" href="{{ AdminDashboard::getRoute($child) }}">{{ $child['title'] ?? 'Untitled' }}</a>

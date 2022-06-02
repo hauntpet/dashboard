@@ -1,3 +1,3 @@
-<label {{ $attributes->merge(['class' => "font-bold text-sm {$applyInline()}"]) }}>
+<label {{ $attributes->merge(['class' => "font-bold {$applyInline()}"]) }}>
     {{ $content === '' ? $slot : $content }}
 </label>

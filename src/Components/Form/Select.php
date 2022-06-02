@@ -6,22 +6,28 @@ use Illuminate\View\Component;
 use HauntPet\Dashboard\Concerns\Margin;
 use HauntPet\Dashboard\Concerns\InputStyles;
 
-class Input extends Component
+class Select extends Component
 {
     use Margin,
         InputStyles;
 
     /**
+     * Whether multiple options should be selectable.
+     * @var bool
+     */
+    public bool $multiple;
+
+    /**
      * Create a new component instance.
      *
-     * @param bool $disabled
      * @param bool $margin
+     * @param bool $multiple
      * @return void
      */
-    public function __construct(bool $disabled = false, bool $margin = true)
+    public function __construct(bool $margin = true, bool $multiple = false)
     {
-        $this->disabled = $disabled;
         $this->margin = $margin;
+        $this->multiple = $multiple;
     }
 
     /**
@@ -31,6 +37,11 @@ class Input extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.input');
+        return view('haunt-framework::form.select');
+    }
+
+    public function applyMultiple(): string
+    {
+        return $this->multiple ? 'h-40' : 'h-10';
     }
 }
