@@ -1,7 +1,5 @@
-@includeComponent('haunt-framework::layouts._head', ['title' => $title ?? ''])
-
-    <div {{ $attributes->merge(['class' => "bg-gray-200 min-h-screen"]) }}>
-        {{ $slot }}
+@include('haunt-dashboard::header')
+    <div class="bg-gray-200 min-h-screen">
+        @yield('main')
     </div>
-
-@includeComponent('haunt-framework::layouts._foot')
+@include('haunt-dashboard::footer')

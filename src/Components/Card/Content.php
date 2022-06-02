@@ -13,6 +13,6 @@ class Content extends Component
      */
     public function render()
     {
-        return view('haunt-framework::card.content');
+        return view('haunt-components::card.content');
     }
 }

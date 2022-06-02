@@ -41,7 +41,7 @@ class Checkbox extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.checkbox');
+        return view('haunt-components::form.checkbox');
     }
 
     /**

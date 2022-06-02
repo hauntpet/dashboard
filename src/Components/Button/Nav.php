@@ -31,6 +31,6 @@ class Nav extends Component
      */
     public function render()
     {
-        return view('haunt-framework::button.nav');
+        return view('haunt-components::button.nav');
     }
 }

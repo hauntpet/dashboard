@@ -26,6 +26,6 @@ class Text extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.text');
+        return view('haunt-components::form.text');
     }
 }

@@ -39,6 +39,6 @@ class Pill extends Component
      */
     public function render()
     {
-        return view('haunt-framework::button.pill');
+        return view('haunt-components::button.pill');
     }
 }

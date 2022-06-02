@@ -13,6 +13,6 @@ class Footer extends Component
      */
     public function render()
     {
-        return view('haunt-framework::card.footer');
+        return view('haunt-components::card.footer');
     }
 }

@@ -9,23 +9,26 @@ use HauntPet\Dashboard\Services\AdminDashboard;
 class DashboardServiceProvider extends ServiceProvider
 {
     /**
+     * The root directory.
+     * @var string
+     */
+    private string $root = __DIR__ . '/../';
+
+    /**
      * Register any application services.
      *
      * @return void
      */
     public function register()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'haunt-framework');
+        $views = "{$this->root}/resources/views";
+        $components = "{$views}/components";
+        $layouts = "{$views}/layouts";
+
+        $this->loadViewsFrom($components, 'haunt-components');
+        $this->loadViewsFrom($layouts, 'haunt-dashboard');
+        $this->publishes([$layouts => resource_path('/views/vendor/haunt-dashboard')], 'haunt');
 
         Blade::componentNamespace('HauntPet\\Dashboard\\Components', 'haunt');
-
-        Blade::directive('includeComponent', function (string $expression) {
-            [$view, $data] = explode(',', $expression) + ['', '[]'];
-            return "<?php echo view({$view}, {$data})->render(); ?>";
-        });
-
-        $this->app->singleton('haunt-admin-dashboard', function ($app) {
-            return new AdminDashboard;
-        });
     }
 }

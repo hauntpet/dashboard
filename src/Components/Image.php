@@ -27,6 +27,6 @@ class Image extends Component
      */
     public function render()
     {
-        return view('haunt-framework::utilities.image');
+        return view('haunt-components::utilities.image');
     }
 }

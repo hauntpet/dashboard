@@ -13,6 +13,6 @@ class Card extends Component
      */
     public function render()
     {
-        return view('haunt-framework::card.index');
+        return view('haunt-components::card.index');
     }
 }

@@ -13,6 +13,6 @@ class Avatar extends Image
      */
     public function render()
     {
-        return view('haunt-framework::utilities.avatar');
+        return view('haunt-components::utilities.avatar');
     }
 }

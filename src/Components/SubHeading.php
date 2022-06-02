@@ -36,6 +36,6 @@ class SubHeading extends Component
      */
     public function render()
     {
-        return view('haunt-framework::utilities.sub-heading');
+        return view('haunt-components::utilities.sub-heading');
     }
 }

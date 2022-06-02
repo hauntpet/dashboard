@@ -27,6 +27,6 @@ class Image extends Component
      */
     public function render()
     {
-        return view('haunt-framework::card.image');
+        return view('haunt-components::card.image');
     }
 }

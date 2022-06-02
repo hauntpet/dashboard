@@ -31,6 +31,6 @@ class Label extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.label');
+        return view('haunt-components::form.label');
     }
 }

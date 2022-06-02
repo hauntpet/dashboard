@@ -30,6 +30,6 @@ class Form extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.index');
+        return view('haunt-components::form.index');
     }
 }

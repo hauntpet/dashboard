@@ -31,6 +31,6 @@ class Input extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.input');
+        return view('haunt-components::form.input');
     }
 }

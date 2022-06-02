@@ -35,6 +35,6 @@ class Heading extends Component
      */
     public function render()
     {
-        return view('haunt-framework::utilities.heading');
+        return view('haunt-components::utilities.heading');
     }
 }

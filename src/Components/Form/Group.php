@@ -43,6 +43,6 @@ class Group extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.group');
+        return view('haunt-components::form.group');
     }
 }

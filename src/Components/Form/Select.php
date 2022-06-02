@@ -37,7 +37,7 @@ class Select extends Component
      */
     public function render()
     {
-        return view('haunt-framework::form.select');
+        return view('haunt-components::form.select');
     }
 
     public function applyMultiple(): string

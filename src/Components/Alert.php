@@ -5,21 +5,25 @@ namespace HauntPet\Dashboard\Components;
 use Illuminate\View\Component;
 use HauntPet\Dashboard\Concerns\Theme;
 use HauntPet\Dashboard\Concerns\Margin;
+use HauntPet\Dashboard\Concerns\Content;
 
 class Alert extends Component
 {
-    use Margin,
+    use Content,
+        Margin,
         Theme;
 
     /**
      * Create a new component instance.
      *
+     * @param string|null $content
      * @param string $theme
      * @param bool $margin
      * @return void
      */
-    public function __construct(string $theme = 'error', bool $margin = true)
+    public function __construct(string $content = null, string $theme = 'error', bool $margin = true)
     {
+        $this->content = $content;
         $this->margin = $margin;
         $this->theme = $theme;
     }
@@ -31,6 +35,6 @@ class Alert extends Component
      */
     public function render()
     {
-        return view('haunt-framework::utilities.alert');
+        return view('haunt-components::utilities.alert');
     }
 }
