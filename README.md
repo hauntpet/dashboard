@@ -10,48 +10,4 @@ composer require hauntpet/dashboard
 ```
 
 ### Usage
-The `auth()->user()` model requires the fields **username, and profile_image**. The route `/logout` is also required.
-
-Create a custom Admin Dashboard class that extends the base class. Within this class you can build the navigation.
-```php
-namespace App\Services;
-
-use Illuminate\Support\Collection;
-use HauntPet\Framework\Services\AdminDashboard as Dashboard;
-
-class AdminDashboard extends Dashboard
-{
-    /**
-     * Get the navigation.
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    public function getNavigation(): Collection
-    {
-        return collect([
-            'home' => [
-                'icon' => 'home',
-                'route' => '/',
-                'active' => [],
-                'children' => [
-                    'home' => [
-                        'title' => 'Home',
-                        'route' => '/',
-                    ],
-                ],
-            ],
-        ]);
-    }
-}
-```
-
-Then bind the class in a service provider's `register`  method.
-```php
-use App\Services\AdminDashboard;
-
-$this->app->singleton('haunt-admin-dashboard', function ($app) {
-    return new AdminDashboard;
-});
-```
-
-You can now use the `<x-haunt::layouts.dashboard>` blade component to create an admin area. **A user must be authenticated to view the layout.**
+Publish the dashboard views `php artisan vendor:publish --tag=haunt` to build the navigation and customise the profile area.
