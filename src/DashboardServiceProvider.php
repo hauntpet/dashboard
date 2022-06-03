@@ -27,7 +27,8 @@ class DashboardServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom($components, 'haunt-components');
         $this->loadViewsFrom($layouts, 'haunt-dashboard');
-        $this->publishes([$layouts => resource_path('/views/vendor/haunt-dashboard')], 'haunt');
+        $this->publishes([$components => resource_path('/views/vendor/haunt-component')], 'haunt-components');
+        $this->publishes([$layouts => resource_path('/views/vendor/haunt-dashboard')], 'haunt-dashboard');
 
         Blade::componentNamespace('HauntPet\\Dashboard\\Components', 'haunt');
     }
