@@ -1,3 +1,5 @@
-<div {{ $attributes->merge(['class' => "p-8"]) }}>
+@aware(['buffer' => 'medium'])
+
+<div {{ $attributes->merge(['class' => "{$applyBuffer($buffer)}"]) }}>
     {{ $slot }}
 </div>

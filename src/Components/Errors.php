@@ -13,6 +13,6 @@ class Errors extends Component
      */
     public function render()
     {
-        return view('haunt-components::utilities.errors');
+        return view('haunt-components::messages.errors');
     }
 }

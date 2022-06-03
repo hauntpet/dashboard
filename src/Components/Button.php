@@ -4,44 +4,53 @@ namespace HauntPet\Dashboard\Components;
 
 use Illuminate\View\Component;
 use HauntPet\Dashboard\Concerns\Theme;
-use HauntPet\Dashboard\Concerns\Content;
+use HauntPet\Dashboard\Concerns\State\Href;
 use HauntPet\Dashboard\Concerns\Block\Buffer;
-use HauntPet\Dashboard\Concerns\Block\Outlined;
-use HauntPet\Dashboard\Concerns\Block\ShowMargin;
+use HauntPet\Dashboard\Concerns\State\Content;
+use HauntPet\Dashboard\Concerns\Block\FullWidth;
 use HauntPet\Dashboard\Concerns\Block\ShowRounded;
 
-class Alert extends Component
+class Button extends Component
 {
     use Buffer,
         Content,
-        Outlined,
-        ShowMargin,
+        FullWidth,
+        Href,
         ShowRounded,
         Theme;
+
+    /**
+     * Whether the button should be a pill.
+     * @var bool
+     */
+    public bool $pill;
 
     /**
      * Create a new component instance.
      *
      * @param string $buffer
      * @param string|null $content
-     * @param bool $outlined
-     * @param bool $showMargin
+     * @param bool $fullWidth
+     * @param string|null $href
+     * @param bool $pill
      * @param bool $showRounded
      * @param string $theme
      * @return void
      */
     public function __construct(
-        string $buffer = 'small',
+        string $buffer = 'medium',
         string $content = null,
-        bool $outlined = false,
-        bool $showMargin = true,
+        bool $fullWidth = false,
+        string $href = null,
+        bool $pill = false,
         bool $showRounded = true,
         string $theme = 'info'
     ) {
         $this->buffer = $buffer;
         $this->content = $content;
-        $this->outlined = $outlined;
-        $this->showMargin = $showMargin;
+        $this->fullWidth = $fullWidth;
+        $this->href = $href;
+        $this->pill = $pill;
         $this->showRounded = $showRounded;
         $this->theme = $theme;
     }
@@ -53,6 +62,20 @@ class Alert extends Component
      */
     public function render()
     {
-        return view('haunt-components::utilities.alert');
+        return view('haunt-components::button.index');
+    }
+
+    /**
+     * Apply the pill shape.
+     *
+     * @return string
+     */
+    public function applyPill(): string
+    {
+        if ($this->pill) {
+            return 'rounded-full';
+        }
+
+        return $this->showRounded ? 'rounded' : '';
     }
 }

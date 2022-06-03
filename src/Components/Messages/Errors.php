@@ -1,14 +1,11 @@
 <?php
 
-namespace HauntPet\Dashboard\Components\Card;
+namespace HauntPet\Dashboard\Components\Messages;
 
 use Illuminate\View\Component;
-use HauntPet\Dashboard\Concerns\Styles\ApplyBuffer;
 
-class Content extends Component
+class Errors extends Component
 {
-    use ApplyBuffer;
-
     /**
      * Get the view / contents that represent the component.
      *
@@ -16,6 +13,6 @@ class Content extends Component
      */
     public function render()
     {
-        return view('haunt-components::card.content');
+        return view('haunt-components::messages.errors');
     }
 }

@@ -3,12 +3,11 @@
 namespace HauntPet\Dashboard\Components\Card;
 
 use Illuminate\View\Component;
-use HauntPet\Dashboard\Concerns\Block\Buffer;
 use HauntPet\Dashboard\Concerns\Block\ShowBorder;
 use HauntPet\Dashboard\Concerns\Styles\ApplyTheme;
 use HauntPet\Dashboard\Concerns\Styles\ApplyBuffer;
 
-class Footer extends Component
+class Header extends Component
 {
     use ApplyBuffer,
         ApplyTheme,
@@ -32,6 +31,6 @@ class Footer extends Component
      */
     public function render()
     {
-        return view('haunt-components::card.footer');
+        return view('haunt-components::card.header');
     }
 }
