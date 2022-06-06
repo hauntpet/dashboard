@@ -5,44 +5,44 @@ namespace HauntPet\Dashboard\Components;
 use Illuminate\View\Component;
 use HauntPet\Dashboard\Concerns\Theme;
 use HauntPet\Dashboard\Concerns\Content;
-use HauntPet\Dashboard\Concerns\Block\Buffer;
 use HauntPet\Dashboard\Concerns\Block\Outlined;
 use HauntPet\Dashboard\Concerns\Block\ShowMargin;
-use HauntPet\Dashboard\Concerns\Block\ShowRounded;
+use HauntPet\Dashboard\Concerns\Styles\ApplyBuffer;
+use HauntPet\Dashboard\Concerns\Styles\ApplyRounded;
 
 class Alert extends Component
 {
-    use Buffer,
+    use ApplyBuffer,
         Content,
         Outlined,
         ShowMargin,
-        ShowRounded,
+        ApplyRounded,
         Theme;
 
     /**
      * Create a new component instance.
      *
+     * @param bool $applyRounded
      * @param string $buffer
      * @param string|null $content
      * @param bool $outlined
      * @param bool $showMargin
-     * @param bool $showRounded
      * @param string $theme
      * @return void
      */
     public function __construct(
+        bool $applyRounded = true,
         string $buffer = 'small',
         string $content = null,
         bool $outlined = false,
         bool $showMargin = true,
-        bool $showRounded = true,
         string $theme = 'info'
     ) {
+        $this->applyRounded = $applyRounded;
         $this->buffer = $buffer;
         $this->content = $content;
         $this->outlined = $outlined;
         $this->showMargin = $showMargin;
-        $this->showRounded = $showRounded;
         $this->theme = $theme;
     }
 

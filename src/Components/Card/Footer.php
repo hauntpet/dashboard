@@ -3,7 +3,6 @@
 namespace HauntPet\Dashboard\Components\Card;
 
 use Illuminate\View\Component;
-use HauntPet\Dashboard\Concerns\Block\Buffer;
 use HauntPet\Dashboard\Concerns\Block\ShowBorder;
 use HauntPet\Dashboard\Concerns\Styles\ApplyTheme;
 use HauntPet\Dashboard\Concerns\Styles\ApplyBuffer;

@@ -1,4 +1,4 @@
-<x-haunt::card buffer="small" :level="0" :showBorder="true" :showMargin="false" :showRounded="false">
+<x-haunt::card :applyOverflow="false" buffer="small" :level="0" :showBorder="true" :showMargin="false" :applyRounded="false">
     <x-haunt::card.content class="flex items-center rounded-none">
         <div class="flex flex-grow font-bold space-x-3 text-gray-400 text-sm uppercase">
             <a class="hover:text-blue-500" :href="route('index')">Title</a>

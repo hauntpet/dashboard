@@ -2,23 +2,23 @@
 
 namespace HauntPet\Dashboard\Concerns\Block;
 
-trait Level
+trait Elevation
 {
     /**
-     * The level of the block element
+     * The elevation of the block element
      * [0, 1, 2, 3, 4, 5, 6]
      * @var int
      */
-    public int $level;
+    public int $elevation;
 
     /**
-     * Apply the level.
+     * Apply the elevation.
      *
      * @return string
      */
-    public function applyLevel(): string
+    public function applyElevation(): string
     {
-        switch ($this->level) {
+        switch ($this->elevation) {
             case 0:
                 return 'shadow-none';
                 break;

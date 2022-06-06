@@ -1,5 +1,10 @@
 <?php
-    $classes = "font-bold inline-flex tracking-wide uppercase {$applyBuffer($buffer, 'px-2 py-1 text-xs', 'px-3 py-2 text-sm', 'px-4 py-3')} {$applyPill()} {$applyTheme('500', $theme, true)} {$applyFullWidth()}";
+$classes = Str::squish("font-bold inline-flex text-sm tracking-wide uppercase
+    {$applyBuffer($buffer, '2-1', '3-2', '4-3')}
+    {$applyPill()}
+    {$applyTheme('500', $theme, true)}
+    {$applyFullWidth()}
+");
 ?>
 
 @if($href === null)

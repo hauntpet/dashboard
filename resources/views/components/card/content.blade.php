@@ -1,5 +1,11 @@
 @aware(['buffer' => 'medium'])
 
-<div {{ $attributes->merge(['class' => "{$applyBuffer($buffer)}"]) }}>
+@php
+$classes = Str::squish("
+    {$applyBuffer($buffer)}
+");
+@endphp
+
+<div {{ $attributes->merge(['class' => $classes]) }}>
     {{ $slot }}
 </div>

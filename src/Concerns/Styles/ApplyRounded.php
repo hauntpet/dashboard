@@ -5,19 +5,20 @@ namespace HauntPet\Dashboard\Concerns\Styles;
 trait ApplyRounded
 {
     /**
-     * Apply the rounded.
+     * Whether to apply the rounded classes.
+     * @var bool
+     */
+    public bool $applyRounded;
+
+    /**
+     * Apply the rounded classes.
      *
-     * @param bool|null $state
      * @param string $rounded
      * @param string $noRounded
      * @return string
      */
-    public function applyRounded(?bool $state = null, string $rounded = 'rounded', string $noRounded = ''): string
+    public function applyRounded(string $rounded = 'rounded', string $noRounded = ''): string
     {
-        if ($state === null) {
-            $state = $this->showRounded;
-        }
-
-        return $state ? $rounded : $noRounded;
+        return $this->applyRounded ? $rounded : $noRounded;
     }
 }

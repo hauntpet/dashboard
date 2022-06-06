@@ -1,5 +1,13 @@
 @aware(['buffer' => 'medium', 'theme' => 'light'])
 
-<div {{ $attributes->merge(['class' => "flex {$applyBuffer($buffer, 'p-3', 'px-6 py-3', 'px-12 py-6')} {$applyShowBorder('border-t border-inherit')} {$applyTheme('200', $theme)}"]) }}>
+<?php
+$classes = Str::squish("flex
+    {$applyBuffer($buffer, '3', '6-3', '12-6')}
+    {$applyShowBorder('border-t border-inherit')}
+    {$applyTheme('200', $theme)}
+");
+?>
+
+<div {{ $attributes->merge(['class' => $classes]) }}>
     {{ $slot }}
 </div>

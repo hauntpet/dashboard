@@ -1,5 +1,17 @@
 @aware(['buffer' => 'medium', 'theme' => 'light'])
 
-<div {{ $attributes->merge(['class' => "flex {$applyBuffer($buffer, 'p-3', 'px-6 py-3', 'px-12 py-6')} {$applyShowBorder('border-b border-inherit')} {$applyTheme('200', $theme)}"]) }}>
-    {{ $slot }}
+<?php
+$classes = Str::squish("flex
+    {$applyBuffer($buffer, '3', '6-3', '12-6')}
+    {$applyShowBorder('border-b border-inherit')}
+    {$applyTheme('200', $theme)}
+");
+?>
+
+<div {{ $attributes->merge(['class' => $classes]) }}>
+    @if($level > 0)
+        <x-haunt::heading :content="$content ?? $slot" :level="$level" :margin="false" />
+    @else
+        {{ $content ?? $slot }}
+    @endif
 </div>

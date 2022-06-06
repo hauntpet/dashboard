@@ -42,12 +42,15 @@ composer require hauntpet/dashboard
 ### Card
 | Component | Attribute | Default | Description |
 | --- | --- | --- | --- |
+| card | applyOverflow | true | Whether to apply the overflow classes. |
+| card | applyRounded | true | Whether to apply the rounded classes. |
 | card | buffer | medium | The padding applied to the sections. Can be small, medium, or large. |
 | card | level | 2 | The level of shadow. Can be 0, 1, 2, 3, 4, 5, or 6. |
 | card | showBorder | false | Whether to show a border. |
 | card | showMargin | true | Whether to show a bottom margin. |
-| card | showRounded | true | Whether to show rounded corners. |
 | card | theme | light | Can be info, error, success, light, dark, primary, or clear. |
+| card.header | content | null | The content to show instead of the slot. |
+| card.footer | content | null | The content to show instead of the slot. |
 
 ```html
 <x-haunt::card>
