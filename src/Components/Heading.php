@@ -6,12 +6,13 @@ use Illuminate\View\Component;
 use HauntPet\Dashboard\Concerns\Level;
 use HauntPet\Dashboard\Concerns\Margin;
 use HauntPet\Dashboard\Concerns\Content;
+use HauntPet\Dashboard\Concerns\Block\ShowMargin;
 
 class Heading extends Component
 {
     use Content,
         Level,
-        Margin;
+        ShowMargin;
 
     /**
      * Create a new component instance.
@@ -21,11 +22,14 @@ class Heading extends Component
      * @param bool $margin
      * @return void
      */
-    public function __construct(string $content = null, int $level = 3, bool $margin = true)
-    {
+    public function __construct(
+        string $content = null,
+        int $level = 3,
+        bool $showMargin = true,
+    ) {
         $this->content = $content;
         $this->level = $level;
-        $this->margin = $margin;
+        $this->showMargin = $showMargin;
     }
 
     /**

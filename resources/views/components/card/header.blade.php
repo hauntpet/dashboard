@@ -10,7 +10,7 @@ $classes = Str::squish("flex
 
 <div {{ $attributes->merge(['class' => $classes]) }}>
     @if($level > 0)
-        <x-haunt::heading :content="$content ?? $slot" :level="$level" :margin="false" />
+        <x-haunt::heading :content="$content ?? $slot" :level="$level" :showMargin="false" />
     @else
         {{ $content ?? $slot }}
     @endif
