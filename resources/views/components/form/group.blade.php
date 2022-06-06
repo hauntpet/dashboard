@@ -15,6 +15,7 @@
                 :class="!$errors->has($attributes['name']) ?: 'border-red-500'"
                 :disabled="$attributes['disabled'] ?? false"
                 :name="$attributes['name']"
+                :placeholder="$attributes['placeholder']"
                 :readonly="$attributes['readonly'] ?? false"
                 :type="$attributes['type']"
                 :value="$attributes['value']"
