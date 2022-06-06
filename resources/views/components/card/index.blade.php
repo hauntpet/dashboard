@@ -4,7 +4,7 @@ $classes = Str::squish("
     {$applyOverflow('overflow-hidden')}
     {$applyRounded('rounded-lg')}
     {$applyShowBorder('border')}
-    {$applyShowMargin('mb-3')}
+    {$applyShowMargin('mb-6')}
     {$applyTheme('100')}
 ");
 @endphp

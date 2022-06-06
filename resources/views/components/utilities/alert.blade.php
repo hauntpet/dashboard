@@ -2,7 +2,7 @@
 $classes = Str::squish("text-sm whitespace-no-wrap
     {$applyBuffer()}
     {$applyRounded()}
-    {$applyShowMargin('mb-3')}
+    {$applyShowMargin('mb-6')}
     {$applyTheme()}
 ");
 @endphp
