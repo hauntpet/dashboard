@@ -36,7 +36,7 @@ class Group extends Component
         string $content = '',
         string $field = 'input',
         array $options = [],
-        bool $showMargin = false,
+        bool $showMargin = true,
     ) {
         $this->content = $content;
         $this->field = $field;
