@@ -3,11 +3,13 @@
 namespace HauntPet\Dashboard\Components\Form;
 
 use Illuminate\View\Component;
-use HauntPet\Dashboard\Concerns\Content;
+use HauntPet\Dashboard\Concerns\State\Content;
+use HauntPet\Dashboard\Concerns\Block\ShowMargin;
 
 class Group extends Component
 {
-    use Content;
+    use Content,
+        ShowMargin;
 
     /**
      * The type of field to use.
@@ -27,13 +29,19 @@ class Group extends Component
      * @param string $content
      * @param string|null $field
      * @param array $options
+     * @param bool $showMargin
      * @return void
      */
-    public function __construct(string $content = '', string $field = 'input', array $options = [])
-    {
+    public function __construct(
+        string $content = '',
+        string $field = 'input',
+        array $options = [],
+        bool $showMargin = false,
+    ) {
         $this->content = $content;
         $this->field = $field;
         $this->options = $options;
+        $this->showMargin = $showMargin;
     }
 
     /**

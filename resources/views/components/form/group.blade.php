@@ -1,4 +1,10 @@
-<div {{ $attributes }}>
+@php
+$classes = Str::squish("
+    {$applyShowMargin('mb-3')}
+");
+@endphp
+
+<div {{ $attributes->merge(['class' => $classes]) }}>
     @if($field === null)
         <x-haunt::form.label
             :content="$content"
