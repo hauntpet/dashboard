@@ -4,19 +4,25 @@ namespace HauntPet\Dashboard\Components;
 
 use Illuminate\View\Component;
 use HauntPet\Dashboard\Concerns\Src;
+use HauntPet\Dashboard\Concerns\Block\ShowMargin;
 
 class Image extends Component
 {
-    use Src;
+    use ShowMargin,
+        Src;
 
     /**
      * Create a new component instance.
      *
      * @param string $src
+     * @param bool $showMargin
      * @return void
      */
-    public function __construct(string $src)
-    {
+    public function __construct(
+        string $src,
+        bool $showMargin = false,
+    ) {
+        $this->showMargin = $showMargin;
         $this->src = $src;
     }
 
