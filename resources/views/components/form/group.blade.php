@@ -26,6 +26,18 @@ $classes = Str::squish("
                 :type="$attributes['type']"
                 :value="$attributes['value']"
             />
+        @elseif($field === 'textarea')
+            <x-haunt::form.label
+                :content="$content"
+                :for="$attributes['name']"
+            />
+            <x-haunt::form.textarea
+                :class="!$errors->has($attributes['name']) ?: 'border-red-500'"
+                :disabled="$attributes['disabled'] ?? false"
+                :name="$attributes['name']"
+                :placeholder="$attributes['placeholder']"
+                :readonly="$attributes['readonly'] ?? false"
+            >{{ $attributes['value'] }}</x-haunt::form.textarea>
         @elseif($field === 'select')
             <x-haunt::form.label
                 :content="$content"
