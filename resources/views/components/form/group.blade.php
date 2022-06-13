@@ -25,6 +25,7 @@ $classes = Str::squish("
                 :readonly="$attributes['readonly'] ?? false"
                 :type="$attributes['type']"
                 :value="$attributes['value']"
+                :wire:model="$attributes['wire:model']"
             />
         @elseif($field === 'textarea')
             <x-haunt::form.label
