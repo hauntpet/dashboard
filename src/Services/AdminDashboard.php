@@ -54,15 +54,17 @@ class AdminDashboard
      * @param string $route
      * @param array $children
      * @param array $active
+     * @param \Closure|null $show
      * @return void
      */
-    public function addNavigationParent(string $slug, string $icon, string $route, array $children = [], array $active = []): void
+    public function addNavigationParent(string $slug, string $icon, string $route, array $children = [], array $active = [], \Closure $show = null): void
     {
         $data = [
             'icon' => $icon,
             'route' => $route,
             'children' => $children,
             'active' => $active,
+            'show' => $show,
         ];
 
         $this->navigation->put($slug, $data);
