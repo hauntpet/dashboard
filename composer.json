@@ -12,7 +12,8 @@
     "require": {
         "php": "^8.0.2",
         "laravel/framework": "^9.17",
-        "blade-ui-kit/blade-heroicons": "^1.3"
+        "blade-ui-kit/blade-heroicons": "^1.3",
+        "livewire/livewire": "^2.10"
     },
     "autoload": {
         "psr-4": {
