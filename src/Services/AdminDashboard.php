@@ -16,6 +16,12 @@ class AdminDashboard
     protected \Illuminate\Filesystem\Filesystem $files;
 
     /**
+     * The logout route to use.
+     * @var string
+     */
+    protected string $logoutRoute;
+
+    /**
      * The main navigation.
      * @var \Illuminate\Support\Collection
      */
@@ -41,6 +47,7 @@ class AdminDashboard
     public function __construct(Filesystem $files)
     {
         $this->files = $files;
+        $this->logoutRoute = '/logout';
         $this->navigation = collect();
         $this->routeFiles = collect();
         $this->setTitle(config('app.name'));
@@ -175,6 +182,27 @@ class AdminDashboard
     public function setTitle(string $title): void
     {
         $this->title = $title;
+    }
+
+    /**
+     * Get the logout route.
+     *
+     * @return string
+     */
+    public function getLogoutRoute(): string
+    {
+        return $this->logoutRoute;
+    }
+
+    /**
+     * Set the logout route.
+     *
+     * @param string $route
+     * @return void
+     */
+    public function setLogoutRoute(string $route): void
+    {
+        $this->logoutRoute = $route;
     }
 
     /**

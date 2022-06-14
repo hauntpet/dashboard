@@ -8,7 +8,7 @@
         <div class="flex items-center space-x-2">
             <div class="leading-3 text-right">
                 <div>{{ auth()->user()->username }}</div>
-                <a class="block text-blue-500 text-xs" href="logout">logout?</a>
+                <a class="block text-blue-500 text-xs" href="{{ AdminDashboard::getLogoutRoute() }}">logout?</a>
             </div>
             <x-haunt::avatar class="h-9 w-9" :src="auth()->user()->profile_image" />
         </div>
