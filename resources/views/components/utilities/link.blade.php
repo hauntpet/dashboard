@@ -1,8 +1,8 @@
 @php
-$classes = Str::squish("text-blue-500
+$classes = Str::squish("
 ");
 @endphp
 
-<a class="{{ $classes }}" href="{{ $href }}">
+<a {{ $attributes->merge(['class' => $classes]) }} href="{{ $href }}">
     {{ $content ?? $slot }}
 </a>
