@@ -34,6 +34,18 @@ class AdminDashboard
     protected \Illuminate\Support\Collection $routeFiles;
 
     /**
+     * The scripts to load.
+     * @var \Illuminate\Support\Collection
+     */
+    protected \Illuminate\Support\Collection $scripts;
+
+    /**
+     * The styles to load.
+     * @var \Illuminate\Support\Collection
+     */
+    protected \Illuminate\Support\Collection $styles;
+
+    /**
      * The title of the dashboard.
      * @var string
      */
@@ -50,6 +62,8 @@ class AdminDashboard
         $this->logoutRoute = '/logout';
         $this->navigation = collect();
         $this->routeFiles = collect();
+        $this->scripts = collect();
+        $this->styles = collect();
         $this->setTitle(config('app.name'));
     }
 
@@ -192,6 +206,53 @@ class AdminDashboard
     public function getLogoutRoute(): string
     {
         return $this->logoutRoute;
+    }
+
+    /**
+     * Add a style.
+     *
+     * @param string $path
+     * @return void
+     */
+    public function addStyle(string $path): void
+    {
+        $this->styles->push($path);
+    }
+
+    /**
+     * Add a script.
+     *
+     * @param string $path
+     * @param bool $head
+     * @return void
+     */
+    public function addScript(string $path, bool $head = false): void
+    {
+        $this->scripts->push(['path' => $path, 'head' => $head]);
+    }
+
+    /**
+     * Load the styles.
+     *
+     * @return
+     */
+    public function loadStyles()
+    {
+        return $this->styles->transform(function ($style) {
+            return "<link rel='stylesheet' href='{$style}'>";
+        })->implode('');
+    }
+
+    /**
+     * Load the scripts.
+     *
+     * @return
+     */
+    public function loadScripts(bool $head = false)
+    {
+        return $this->scripts->where('head', $head)->transform(function ($script) {
+            return "<script src='{$script['path']}'></script>";
+        })->implode('');
     }
 
     /**
