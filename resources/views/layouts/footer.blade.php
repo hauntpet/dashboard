@@ -1,4 +1,4 @@
         @livewireScripts
-        {!! AdminDashboard::loadScripts(false) !!}
+        {!! AdminDashboard::loadFooter() !!}
     </body>
 </html>

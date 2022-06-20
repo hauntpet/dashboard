@@ -2,6 +2,7 @@
 
 namespace HauntPet\Dashboard\Services;
 
+use Closure;
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Filesystem\Filesystem;
@@ -9,41 +10,12 @@ use Illuminate\Support\Facades\Route;
 
 class AdminDashboard
 {
-    /**
-     * The main navigation.
-     * @var \Illuminate\Filesystem\Filesystem
-     */
     protected \Illuminate\Filesystem\Filesystem $files;
-
-    /**
-     * The logout route to use.
-     * @var string
-     */
+    protected \Illuminate\Support\Collection $footer;
+    protected \Illuminate\Support\Collection $head;
     protected string $logoutRoute;
-
-    /**
-     * The main navigation.
-     * @var \Illuminate\Support\Collection
-     */
     protected \Illuminate\Support\Collection $navigation;
-
-    /**
-     * The main navigation.
-     * @var \Illuminate\Support\Collection
-     */
     protected \Illuminate\Support\Collection $routeFiles;
-
-    /**
-     * The scripts to load.
-     * @var \Illuminate\Support\Collection
-     */
-    protected \Illuminate\Support\Collection $scripts;
-
-    /**
-     * The styles to load.
-     * @var \Illuminate\Support\Collection
-     */
-    protected \Illuminate\Support\Collection $styles;
 
     /**
      * The title of the dashboard.
@@ -59,11 +31,11 @@ class AdminDashboard
     public function __construct(Filesystem $files)
     {
         $this->files = $files;
+        $this->footer = collect();
+        $this->head = collect();
         $this->logoutRoute = '/logout';
         $this->navigation = collect();
         $this->routeFiles = collect();
-        $this->scripts = collect();
-        $this->styles = collect();
         $this->setTitle(config('app.name'));
     }
 
@@ -209,49 +181,48 @@ class AdminDashboard
     }
 
     /**
-     * Add a style.
+     * Add output to the head.
      *
-     * @param string $path
+     * @param \Closure $func
      * @return void
      */
-    public function addStyle(string $path): void
+    public function addHead(Closure $func): void
     {
-        $this->styles->push($path);
+        $this->head->push($func);
     }
 
     /**
-     * Add a script.
+     * Add output to the footer.
      *
-     * @param string $path
-     * @param bool $head
+     * @param \Closure $func
      * @return void
      */
-    public function addScript(string $path, bool $head = false): void
+    public function addFooter(Closure $func): void
     {
-        $this->scripts->push(['path' => $path, 'head' => $head]);
+        $this->footer->push($func);
     }
 
     /**
-     * Load the styles.
+     * Load the head.
      *
      * @return
      */
-    public function loadStyles()
+    public function loadHead()
     {
-        return $this->styles->transform(function ($style) {
-            return "<link rel='stylesheet' href='{$style}'>";
+        return $this->head->transform(function ($func) {
+            return $func();
         })->implode('');
     }
 
     /**
-     * Load the scripts.
+     * Load the footer.
      *
      * @return
      */
-    public function loadScripts(bool $head = false)
+    public function loadFooter()
     {
-        return $this->scripts->where('head', $head)->transform(function ($script) {
-            return "<script src='{$script['path']}'></script>";
+        return $this->footer->transform(function ($func) {
+            return $func();
         })->implode('');
     }
 
