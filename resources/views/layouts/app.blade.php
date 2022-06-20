@@ -8,6 +8,9 @@
             @include('haunt-dashboard::topbar')
 
             <div class="p-6">
+                <x-haunt::messages.errors only="global" />
+                <x-haunt::messages.success only="global" />
+
                 @yield('content')
             </div>
         </div>
