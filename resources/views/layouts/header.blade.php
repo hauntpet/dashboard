@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ AdminDashboard::getTitle() }}</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
         {!! AdminDashboard::loadHead() !!}
         @livewireStyles
     </head>
