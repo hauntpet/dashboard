@@ -50,11 +50,12 @@ class AdminDashboard
      * @param \Closure|null $show
      * @return void
      */
-    public function addNavigationParent(string $slug, string $icon, string $route, array $children = [], array $active = [], \Closure $show = null): void
+    public function addNavigationParent(string $slug, string $icon, string $route, int $order = 50, array $children = [], array $active = [], \Closure $show = null): void
     {
         $data = [
             'icon' => $icon,
             'route' => $route,
+            'order' => $order,
             'children' => $children,
             'active' => $active,
             'show' => $show,
@@ -70,7 +71,7 @@ class AdminDashboard
      */
     public function getNavigation(): Collection
     {
-        return $this->navigation;
+        return $this->navigation->sortBy('order');
     }
 
     /**
