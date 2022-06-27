@@ -3,12 +3,12 @@
 namespace HauntPet\Dashboard\Components\Form;
 
 use Illuminate\View\Component;
-use HauntPet\Dashboard\Concerns\Margin;
 use HauntPet\Dashboard\Concerns\InputStyles;
+use HauntPet\Dashboard\Concerns\Block\ShowMargin;
 
 class Select extends Component
 {
-    use Margin,
+    use ShowMargin,
         InputStyles;
 
     /**
@@ -20,14 +20,19 @@ class Select extends Component
     /**
      * Create a new component instance.
      *
-     * @param bool $margin
+     * @param bool $disabled
      * @param bool $multiple
+     * @param bool $showMargin
      * @return void
      */
-    public function __construct(bool $margin = true, bool $multiple = false)
-    {
-        $this->margin = $margin;
+    public function __construct(
+        bool $disabled = false,
+        bool $multiple = false,
+        bool $showMargin = false,
+    ) {
+        $this->disabled = $disabled;
         $this->multiple = $multiple;
+        $this->showMargin = $showMargin;
     }
 
     /**

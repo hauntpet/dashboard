@@ -48,10 +48,9 @@ $classes = Str::squish("
                 :class="!$errors->has($attributes['name']) ?: 'border-red-500'"
                 :disabled="$attributes['disabled'] ?? false"
                 :name="$attributes['name']"
-                :value="$attributes['value']"
             >
                 @foreach($options as $key => $value)
-                    <option {{ $attributes['selected'] === $key ? 'selected="selected"' : '' }} value="{{ $key }}">{{ $value }}</option>
+                    <option {{ $attributes['value'] === $key ? 'selected="selected"' : '' }} value="{{ $key }}">{{ $value }}</option>
                 @endforeach
             </x-haunt::form.select>
         @elseif($field === 'checkbox')

@@ -7,6 +7,6 @@ $classes = Str::squish("px-3 py-2 rounded text-sm w-full
 
 <textarea
     {{ $attributes->merge(['class' => $classes]) }}
-    @disabled($disabled)
-    @readonly($readonly)
+    @disabled($disabled ?? false)
+    @readonly($readonly ?? false)
 >{{ $slot }}</textarea>
