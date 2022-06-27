@@ -9,7 +9,7 @@ $classes = Str::squish("bg-gray-100 border border-gray-200 flex items-center p-2
         {{ $title }}
     </div>
     @if($toggle)
-        <div x-show="open" x-transition.delay.100ms>
+        <div class="border border-gray-200 border-t-0 p-6 text-sm" x-show="open" x-transition.delay.100ms>
             {{ $slot }}
         </div>
     @endif
